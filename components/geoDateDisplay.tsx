@@ -22,6 +22,7 @@ export default function GeoDateDisplay({ initDate }: { initDate: number }) {
         setLongitude(position.coords.longitude);
       },
       (error) => {
+        setLongitude((new Date().getTimezoneOffset() / 60) * -15);
         console.error(error);
       },
       {
