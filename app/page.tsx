@@ -48,7 +48,18 @@ export default function Home() {
             View code on Github...
           </Link>
         </div>
-        <p className="text-sm">Made with ❤️ by MugiSus 2024</p>
+        <p className="text-sm">
+          Made with ❤️ by{" "}
+          <Link
+            href="https://mugisus.com"
+            className="underline underline-offset-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MugiSus
+          </Link>{" "}
+          2024
+        </p>
       </div>
     </main>
   );
