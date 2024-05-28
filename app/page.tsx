@@ -13,9 +13,9 @@ export default function Home() {
           <GeoDateDisplay initDate={Date.now()} />
         </div>
       </div>
-      <div className="flex min-h-lvh items-center justify-center snap-center flex-col gap-16 font-light text-center px-8 sm:px-16 py-16">
+      <div className="flex min-h-lvh items-center justify-center snap-center flex-col gap-20 font-light text-center px-8 sm:px-16 py-16">
         <h1 className="font-semibold text-3xl">The Most Accurate Clock</h1>
-        <div className="flex flex-col gap-4 items-center leading-relaxed">
+        <div className="flex flex-col gap-6 items-center leading-loose">
           <p className="text-cyan-600 font-semibold">
             The most accurate clock provides you with the most accurate time for
             your location.
