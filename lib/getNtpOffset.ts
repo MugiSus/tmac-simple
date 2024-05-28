@@ -1,4 +1,4 @@
-export default async function fetchNTP() {
+export default async function getNTPOffset() {
   const requestSent = performance.now();
   const response = await fetch("https://worldtimeapi.org/api/ip");
   const data = await response.json();

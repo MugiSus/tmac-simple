@@ -3,7 +3,7 @@
 import useRequestAnimationFrame from "beautiful-react-hooks/useRequestAnimationFrame";
 import { useEffect, useMemo, useState } from "react";
 import DateDisplay from "./dateDisplay";
-import fetchNTP from "@/lib/fetchNtp";
+import getNTPOffset from "@/lib/getNtpOffset";
 
 export default function NTPDateDisplay({ initDate }: { initDate: number }) {
   const [ntpOffset, setNtpOffset] = useState(0);
@@ -13,7 +13,7 @@ export default function NTPDateDisplay({ initDate }: { initDate: number }) {
   );
 
   useEffect(() => {
-    fetchNTP().then((offset) => setNtpOffset(offset));
+    getNTPOffset().then((offset) => setNtpOffset(offset));
   }, []);
 
   return (

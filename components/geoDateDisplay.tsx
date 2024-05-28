@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import DateDisplay from "./dateDisplay";
-import fetchNTP from "@/lib/fetchNtp";
+import getNTPOffset from "@/lib/getNtpOffset";
 
 export default function GeoDateDisplay({ initDate }: { initDate: number }) {
   const [longitude, setLongitude] = useState(
@@ -12,7 +12,7 @@ export default function GeoDateDisplay({ initDate }: { initDate: number }) {
   const [ntpOffset, setNtpOffset] = useState(0);
 
   useEffect(() => {
-    fetchNTP().then((offset) => setNtpOffset(offset));
+    getNTPOffset().then((offset) => setNtpOffset(offset));
 
     const isGeolocationSupported =
       typeof window !== "undefined" && "geolocation" in window.navigator;
