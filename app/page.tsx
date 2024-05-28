@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col snap-y snap-mandatory h-svh overflow-auto bg-slate-900">
-      <div className="flex min-h-svh items-center justify-center flex-wrap py-16 snap-center">
+    <main className="flex flex-col bg-slate-900">
+      <div className="flex min-h-lvh items-center justify-center flex-wrap py-16 snap-center">
         <div className="text-pink-600">
           <NTPDateDisplay initDate={Date.now()} />
         </div>
@@ -13,7 +13,7 @@ export default function Home() {
           <GeoDateDisplay initDate={Date.now()} />
         </div>
       </div>
-      <div className="flex min-h-svh items-center justify-center snap-center flex-col gap-16 font-light text-center px-8 sm:px-16">
+      <div className="flex min-h-lvh items-center justify-center snap-center flex-col gap-16 font-light text-center px-8 sm:px-16 py-16">
         <h1 className="font-semibold text-3xl">The Most Accurate Clock</h1>
         <div className="flex flex-col gap-4 items-center leading-relaxed">
           <p className="text-cyan-600 font-bold">
@@ -41,7 +41,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            View code in Github...
+            View code on Github...
           </Link>
         </div>
         <p>Made with ❤️ by MugiSus 2024</p>
