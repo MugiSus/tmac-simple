@@ -5,7 +5,9 @@ import DateDisplay from "./dateDisplay";
 import fetchNTP from "@/lib/fetchNtp";
 
 export default function GeoDateDisplay({ initDate }: { initDate: number }) {
-  const [longitude, setLongitude] = useState(0);
+  const [longitude, setLongitude] = useState(
+    (new Date().getTimezoneOffset() / 60) * -15
+  );
 
   const [ntpOffset, setNtpOffset] = useState(0);
 
@@ -22,7 +24,6 @@ export default function GeoDateDisplay({ initDate }: { initDate: number }) {
         setLongitude(position.coords.longitude);
       },
       (error) => {
-        setLongitude((new Date().getTimezoneOffset() / 60) * -15);
         console.error(error);
       },
       {
