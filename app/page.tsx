@@ -40,7 +40,7 @@ export default function Home() {
           </p>
           <p>Kyoto and Tokyo have 15 minutes of a time difference of approx.</p>
           <Link
-            href="https://github.com/MugiSus/tmac-simple"
+            href="https://github.com/MugiSus/tmacywg"
             className="underline underline-offset-2"
             target="_blank"
             rel="noopener noreferrer"
