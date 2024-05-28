@@ -1,5 +1,6 @@
 import NTPDateDisplay from "@/components/ntpDateDisplay";
 import GeoDateDisplay from "@/components/geoDateDisplay";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -34,8 +35,16 @@ export default function Home() {
             20 minutes.
           </p>
           <p>Kyoto and Tokyo have 15 minutes of a time difference of approx.</p>
+          <Link
+            href="https://github.com/MugiSus/tmac-simple"
+            className="underline underline-offset-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View code in Github...
+          </Link>
         </div>
-        <p>Copyright © MugiSus 2024</p>
+        <p>Made with ❤️ by MugiSus 2024</p>
       </div>
     </main>
   );
