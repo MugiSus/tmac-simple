@@ -3,7 +3,7 @@ import GeoDateDisplay from "@/components/geoDateDisplay";
 
 export default function Home() {
   return (
-    <main className="flex h-svh w-svw items-center justify-center overflow-y-hidden">
+    <main className="flex min-h-svh items-center justify-center flex-wrap py-16">
       <div className="text-pink-600">
         <NTPDateDisplay initDate={Date.now()} />
       </div>
