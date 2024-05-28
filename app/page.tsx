@@ -15,7 +15,7 @@ export default function Home() {
       <div className="flex min-h-svh items-center justify-center snap-center flex-col gap-16 font-light text-center px-8 sm:px-16">
         <h1 className="font-semibold text-3xl">The Most Accurate Clock</h1>
         <div className="flex flex-col gap-4 items-center leading-relaxed">
-          <p>
+          <p className="text-cyan-600 font-bold">
             The most accurate clock provides you with the most accurate time for
             your location.
           </p>
@@ -33,6 +33,7 @@ export default function Home() {
             <span className="text-cyan-600 font-bold">the blue clock</span> by
             20 minutes.
           </p>
+          <p>Kyoto and Tokyo have 15 minutes of a time difference of approx.</p>
         </div>
         <p>Copyright © MugiSus 2024</p>
       </div>
