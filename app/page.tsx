@@ -18,48 +18,50 @@ export default function Home() {
           The Most Accurate Clock You Would Get
         </h1>
         <div className="flex flex-col gap-6 items-center leading-loose">
-          <p className="text-cyan-600 font-semibold">
+          <p className="font-semibold">
             The Most Accurate Clock You Would Get provides you with the most
             accurate time for your location.
           </p>
           <p>
-            Since{" "}
-            <span className="text-pink-600 font-semibold">
-              the left red clock
-            </span>{" "}
-            shows NTP server time, which is, sure, accurate,{" "}
-            <span className="text-cyan-600 font-semibold">the blue one</span>{" "}
-            provides the most accurate, with the power of your GPS location
+            <span className="text-pink-600 font-semibold">The red clock</span>{" "}
+            shows NTP server time, which is, sure, accurate, while{" "}
+            <span className="text-cyan-600 font-semibold">the blue clock</span>{" "}
+            provides the most accurate time, with the power of your GPS location
             information.
           </p>
           <p>
-            This calculates an actual time difference, for example if you are at
-            5° latitude, it advances{" "}
+            This page visualizes a precise time difference based by your
+            location, for example, if you are at 5° latitude, it advances{" "}
             <span className="text-cyan-600 font-semibold">the blue clock</span>{" "}
             by 20 minutes.
           </p>
-          <p>Kyoto and Tokyo have 15 minutes of a time difference of approx.</p>
+          <p>
+            Kyoto and Tokyo have 15 minutes of a time difference of approx.
+            These clocks are completely independent of your device&apos;s clock.
+          </p>
+        </div>
+        <div className="flex flex-col items-center leading-loose text-sm">
+          <p>
+            Made with ❤️ by{" "}
+            <Link
+              href="https://mugisus.com"
+              className="underline underline-offset-2 hover:no-underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              MugiSus
+            </Link>{" "}
+            2024
+          </p>
           <Link
             href="https://github.com/MugiSus/tmacywg"
-            className="underline underline-offset-2"
+            className="underline underline-offset-2 hover:no-underline"
             target="_blank"
             rel="noopener noreferrer"
           >
             View code on Github...
           </Link>
         </div>
-        <p className="text-sm">
-          Made with ❤️ by{" "}
-          <Link
-            href="https://mugisus.com"
-            className="underline underline-offset-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            MugiSus
-          </Link>{" "}
-          2024
-        </p>
       </div>
     </main>
   );
