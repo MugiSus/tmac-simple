@@ -7,8 +7,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "themostaccurateclock",
-  description: "Provides the most accurate time of your location",
+  title: "themostaccurateclockyouwouldget",
+  description: "Gives you the most accurate time for your location.",
 };
 
 export default function RootLayout({

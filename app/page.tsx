@@ -14,16 +14,18 @@ export default function Home() {
         </div>
       </div>
       <div className="flex min-h-lvh items-center justify-center snap-center flex-col gap-20 font-light text-center px-8 sm:px-16 py-16">
-        <h1 className="font-semibold text-3xl">The Most Accurate Clock</h1>
+        <h1 className="font-semibold text-4xl">
+          The Most Accurate Clock You Would Get
+        </h1>
         <div className="flex flex-col gap-6 items-center leading-loose">
           <p className="text-cyan-600 font-semibold">
-            The most accurate clock provides you with the most accurate time for
-            your location.
+            The Most Accurate Clock You Would Get provides you with the most
+            accurate time for your location.
           </p>
           <p>
             Since{" "}
             <span className="text-pink-600 font-semibold">
-              The left red clock
+              the left red clock
             </span>{" "}
             shows NTP server time, which is, sure, accurate,{" "}
             <span className="text-cyan-600 font-semibold">the blue one</span>{" "}
@@ -46,7 +48,7 @@ export default function Home() {
             View code on Github...
           </Link>
         </div>
-        <p>Made with ❤️ by MugiSus 2024</p>
+        <p className="text-sm">Made with ❤️ by MugiSus 2024</p>
       </div>
     </main>
   );
