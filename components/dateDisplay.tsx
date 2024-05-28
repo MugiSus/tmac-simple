@@ -33,7 +33,7 @@ export default function DateDisplay({
       <div className="font-light text-[8rem] sm:text-[12rem]">
         {date.getUTCSeconds().toString().padStart(2, "0")}
       </div>
-      <div className="font-regular my-4 text-6xl sm:text-4xl">
+      <div className="font-medium my-4 text-6xl sm:text-4xl">
         .{date.getUTCMilliseconds().toString().padStart(3, "0")}
       </div>
     </div>
