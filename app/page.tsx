@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col bg-slate-950">
-      <div className="flex min-h-svh items-center justify-center flex-wrap py-16 snap-center">
+    <main className="flex flex-col bg-slate">
+      <div className="flex min-h-svh items-center justify-center flex-wrap px-2 py-16 snap-center">
         <div className="text-pink-600">
           <NTPDateDisplay initDate={Date.now()} />
         </div>
