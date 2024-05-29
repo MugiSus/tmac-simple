@@ -25,16 +25,15 @@ export default function Home() {
           </p>
           <p>
             <span className="text-pink-600 font-semibold">The red clock</span>{" "}
-            shows NTP server time, which is, sure, accurate, while{" "}
+            shows how far from the standard time you are, and{" "}
             <span className="text-cyan-600 font-semibold">the blue clock</span>{" "}
-            provides the most accurate time, with the power of your GPS location
-            information.
+            shows the exact time for your location.
           </p>
           <p>
-            This page visualizes a precise time difference based by your
-            location, for example, if you are at 1° latitude, it advances{" "}
+            This page visualizes the slight time difference determined by your
+            location. For every 5° latitude,{" "}
             <span className="text-cyan-600 font-semibold">the blue clock</span>{" "}
-            by 4 minutes.
+            advances by 20 minutes.
           </p>
           <p>
             Kyoto and Tokyo have 15 minutes of a time difference of approx.
