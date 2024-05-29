@@ -43,7 +43,7 @@ export default function Home() {
           </p>
         </div>
         <div>
-          Scan this page on your mobile device and get your own{" "}
+          Scan this page on your mobile device to get your own{" "}
           <span className="font-semibold">most accurate time</span> now:
         </div>
         <Image
