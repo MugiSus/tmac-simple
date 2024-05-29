@@ -1,37 +1,18 @@
-"use client";
-
-import useRequestAnimationFrame from "beautiful-react-hooks/useRequestAnimationFrame";
-import { useState } from "react";
-
-export default function DateDisplay({
-  defaultDate,
-  offset,
-}: {
-  defaultDate: Date;
-  offset?: number;
-}) {
-  const [time, setTime] = useState(defaultDate);
-
-  useRequestAnimationFrame(
-    (progress, next) => {
-      setTime(new Date());
-      next();
-    },
-    { startAt: 0, finishAt: -1 }
-  );
-
-  const date = new Date(time.getTime() + (offset ?? 0));
-
+export default function DateDisplayStatic({ date }: { date: Date }) {
   return (
     <div className="tabular-nums flex flex-col leading-none items-center">
       <div
-        className="font-light text-[9rem] md:text-[12rem]"
+        className={`font-light text-[9rem] md:text-[12rem] ${
+          date.getUTCHours() === 0 && "opacity-40"
+        }`}
         suppressHydrationWarning
       >
         {date.getUTCHours().toString().padStart(2, "0")}
       </div>
       <div
-        className="font-light text-[9rem] md:text-[12rem]"
+        className={`font-light text-[9rem] md:text-[12rem] ${
+          date.getUTCMinutes() === 0 && "opacity-40"
+        }`}
         suppressHydrationWarning
       >
         {date.getUTCMinutes().toString().padStart(2, "0")}

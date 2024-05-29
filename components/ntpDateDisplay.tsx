@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import DateDisplay from "./dateDisplay";
 import getNTPOffset from "@/lib/getNtpOffset";
 
-export default function NTPDateDisplay({ initDate }: { initDate: number }) {
+export default function NTPDateDisplay({ defaultDate }: { defaultDate: Date }) {
   const [ntpOffset, setNtpOffset] = useState(0);
   const timezoneOffset = useMemo(
     () => new Date().getTimezoneOffset() * 60 * 1000 * -1,
@@ -17,6 +17,9 @@ export default function NTPDateDisplay({ initDate }: { initDate: number }) {
   }, []);
 
   return (
-    <DateDisplay initDate={initDate} offset={ntpOffset + timezoneOffset} />
+    <DateDisplay
+      defaultDate={defaultDate}
+      offset={ntpOffset + timezoneOffset}
+    />
   );
 }

@@ -1,16 +1,17 @@
 import NTPDateDisplay from "@/components/ntpDateDisplay";
 import GeoDateDisplay from "@/components/geoDateDisplay";
 import Link from "next/link";
+import GeoDiffDisplay from "@/components/geoDiffDisplay";
 
 export default function Home() {
   return (
     <main className="flex flex-col bg-slate">
       <div className="flex min-h-svh items-center justify-center flex-wrap px-2 py-16 snap-center">
         <div className="text-pink-600">
-          <NTPDateDisplay initDate={Date.now()} />
+          <GeoDiffDisplay />
         </div>
         <div className="text-cyan-600">
-          <GeoDateDisplay initDate={Date.now()} />
+          <GeoDateDisplay defaultDate={new Date()} />
         </div>
       </div>
       <div className="flex min-h-lvh items-center justify-center snap-center flex-col gap-20 font-light text-center px-8 sm:px-16 py-16">
