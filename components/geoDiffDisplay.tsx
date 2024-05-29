@@ -32,5 +32,6 @@ export default function GeoDiffDisplay() {
   const difference = longitude
     ? (longitude * 4 + new Date().getTimezoneOffset()) * 60 * 1000
     : 0;
-  return <DiffDisplay diff={new Date(difference)} />;
+
+  return <DiffDisplay diff={difference} />;
 }
