@@ -1,3 +1,5 @@
+"use client";
+
 // Get timezone offset without daylight saving time
 
 export default function getTimezoneOffsetWithoutDST() {
