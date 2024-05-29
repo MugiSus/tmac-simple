@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import DateDisplay from "./dateDisplay";
 import getNTPOffset from "@/lib/getNtpOffset";
 import DiffDisplay from "./diffDisplay";
+import getTimezoneOffsetWithoutDST from "@/lib/getTimezoneOffsetWithoutDST";
 
 export default function GeoDiffDisplay() {
   const [longitude, setLongitude] = useState<number | false>(false);
@@ -30,7 +31,7 @@ export default function GeoDiffDisplay() {
   }, []);
 
   const difference = longitude
-    ? (longitude * 4 + new Date().getTimezoneOffset()) * 60 * 1000
+    ? (longitude * 4 + getTimezoneOffsetWithoutDST()) * 60 * 1000
     : 0;
 
   return <DiffDisplay diff={difference} />;
