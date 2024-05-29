@@ -3,18 +3,13 @@
 import { useEffect, useState } from "react";
 import DateDisplay from "./dateDisplay";
 import getNTPOffset from "@/lib/getNtpOffset";
+import DiffDisplay from "./diffDisplay";
 import getTimezoneOffsetWithoutDST from "@/lib/getTimezoneOffsetWithoutDST";
 
-export default function GeoDateDisplay({ defaultDate }: { defaultDate: Date }) {
-  const [longitude, setLongitude] = useState(
-    (getTimezoneOffsetWithoutDST() / 60) * -15
-  );
-
-  const [ntpOffset, setNtpOffset] = useState(0);
+export default function GeoDiffDisplay() {
+  const [longitude, setLongitude] = useState<number | false>(false);
 
   useEffect(() => {
-    getNTPOffset().then((offset) => setNtpOffset(offset));
-
     const isGeolocationSupported =
       typeof window !== "undefined" && "geolocation" in window.navigator;
 
@@ -35,9 +30,9 @@ export default function GeoDateDisplay({ defaultDate }: { defaultDate: Date }) {
     );
   }, []);
 
-  const timeDifference = (longitude / 15) * 60 * 60 * 1000 + ntpOffset;
+  const difference = longitude
+    ? (longitude * 4 + getTimezoneOffsetWithoutDST()) * 60 * 1000
+    : 0;
 
-  console.log(timeDifference);
-
-  return <DateDisplay defaultDate={defaultDate} offset={timeDifference} />;
+  return <DiffDisplay diff={difference} />;
 }

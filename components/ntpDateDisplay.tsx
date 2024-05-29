@@ -4,19 +4,19 @@ import useRequestAnimationFrame from "beautiful-react-hooks/useRequestAnimationF
 import { useEffect, useMemo, useState } from "react";
 import DateDisplay from "./dateDisplay";
 import getNTPOffset from "@/lib/getNtpOffset";
+import getTimezoneOffsetWithoutDST from "@/lib/getTimezoneOffsetWithoutDST";
 
-export default function NTPDateDisplay({ initDate }: { initDate: number }) {
+export default function NTPDateDisplay({ defaultDate }: { defaultDate: Date }) {
   const [ntpOffset, setNtpOffset] = useState(0);
-  const timezoneOffset = useMemo(
-    () => new Date().getTimezoneOffset() * 60 * 1000 * -1,
-    []
-  );
 
   useEffect(() => {
     getNTPOffset().then((offset) => setNtpOffset(offset));
   }, []);
 
   return (
-    <DateDisplay initDate={initDate} offset={ntpOffset + timezoneOffset} />
+    <DateDisplay
+      defaultDate={defaultDate}
+      offset={ntpOffset - getTimezoneOffsetWithoutDST() * 60 * 1000}
+    />
   );
 }

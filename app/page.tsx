@@ -1,16 +1,17 @@
 import NTPDateDisplay from "@/components/ntpDateDisplay";
 import GeoDateDisplay from "@/components/geoDateDisplay";
 import Link from "next/link";
+import GeoDiffDisplay from "@/components/geoDiffDisplay";
 
 export default function Home() {
   return (
     <main className="flex flex-col bg-slate">
       <div className="flex min-h-svh items-center justify-center flex-wrap px-2 py-16 snap-center">
         <div className="text-pink-600">
-          <NTPDateDisplay initDate={Date.now()} />
+          <GeoDiffDisplay />
         </div>
         <div className="text-cyan-600">
-          <GeoDateDisplay initDate={Date.now()} />
+          <GeoDateDisplay defaultDate={new Date()} />
         </div>
       </div>
       <div className="flex min-h-lvh items-center justify-center snap-center flex-col gap-20 font-light text-center px-8 sm:px-16 py-16">
@@ -24,16 +25,15 @@ export default function Home() {
           </p>
           <p>
             <span className="text-pink-600 font-semibold">The red clock</span>{" "}
-            shows NTP server time, which is, sure, accurate, while{" "}
+            shows how far from the standard time you are, and{" "}
             <span className="text-cyan-600 font-semibold">the blue clock</span>{" "}
-            provides the most accurate time, with the power of your GPS location
-            information.
+            shows the exact time for your location.
           </p>
           <p>
-            This page visualizes a precise time difference based by your
-            location, for example, if you are at 5° latitude, it advances{" "}
+            This page visualizes the slight time difference determined by your
+            location. For every 5° latitude,{" "}
             <span className="text-cyan-600 font-semibold">the blue clock</span>{" "}
-            by 20 minutes.
+            advances by 20 minutes.
           </p>
           <p>
             Kyoto and Tokyo have 15 minutes of a time difference of approx.
