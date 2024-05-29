@@ -1,6 +1,6 @@
-import NTPDateDisplay from "@/components/ntpDateDisplay";
-import GeoDateDisplay from "@/components/geoDateDisplay";
 import Link from "next/link";
+import Image from "next/image";
+import GeoDateDisplay from "@/components/geoDateDisplay";
 import GeoDiffDisplay from "@/components/geoDiffDisplay";
 
 export default function Home() {
@@ -14,32 +14,45 @@ export default function Home() {
           <GeoDateDisplay defaultDate={new Date()} />
         </div>
       </div>
-      <div className="flex min-h-lvh items-center justify-center snap-center flex-col gap-20 font-light text-center px-8 sm:px-16 py-16">
+      <div className="flex min-h-lvh items-center justify-center snap-center flex-col gap-16 font-light text-center px-8 sm:px-16 py-16">
         <h1 className="font-semibold text-4xl">
           The Most Accurate Clock You Would Get
         </h1>
         <div className="flex flex-col gap-6 items-center leading-loose">
-          <p className="font-semibold">
-            The Most Accurate Clock You Would Get provides you with the most
-            accurate time for your location.
+          <p>
+            provides you with{" "}
+            <span className="font-semibold">the most accurate time</span> for
+            your location.
           </p>
           <p>
             <span className="text-pink-600 font-semibold">The red clock</span>{" "}
             shows how far from the standard time you are, and{" "}
             <span className="text-cyan-600 font-semibold">the blue clock</span>{" "}
-            shows the exact time for your location.
+            shows <span className="font-semibold">the most accurate time</span>{" "}
+            for your location.
           </p>
           <p>
-            This page visualizes the slight time difference determined by your
-            location. For every 5° latitude,{" "}
+            <span className="font-semibold">the most accurate time</span> is
+            determined by your GPS location information. For every 5° latitude,{" "}
             <span className="text-cyan-600 font-semibold">the blue clock</span>{" "}
             advances by 20 minutes.
           </p>
           <p>
-            Kyoto and Tokyo have 15 minutes of a time difference of approx.
-            These clocks are completely independent of your device&apos;s clock.
+            The calculation also uses global NTP server time; hence, these
+            clocks are completely independent of your device&apos;s clock.
           </p>
         </div>
+        <div>
+          Scan this page on your mobile device and get your own{" "}
+          <span className="font-semibold">most accurate time</span> now:
+        </div>
+        <Image
+          src="/qrcode.png"
+          width={128}
+          height={128}
+          alt="https://tmacywg.vercel.app"
+          className="dark:invert opacity-90"
+        />
         <div className="flex flex-col items-center leading-loose text-sm">
           <p>
             Made with ❤️ by{" "}
