@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import DateDisplay from "./dateDisplay";
 import getNTPOffset from "@/lib/getNtpOffset";
-import DateDisplayStatic from "./dateDisplayStatic";
+import DiffDisplay from "./diffDisplay";
 
 export default function GeoDiffDisplay() {
-  const [longitude, setLongitude] = useState(0);
+  const [longitude, setLongitude] = useState<number | false>(false);
 
   useEffect(() => {
     const isGeolocationSupported =
@@ -29,7 +29,8 @@ export default function GeoDiffDisplay() {
     );
   }, []);
 
-  const timeDifference =
-    (longitude * 4 + new Date().getTimezoneOffset()) * 60 * 1000;
-  return <DateDisplayStatic date={new Date(timeDifference)} />;
+  const difference = longitude
+    ? (longitude * 4 + new Date().getTimezoneOffset()) * 60 * 1000
+    : 0;
+  return <DiffDisplay diff={new Date(difference)} />;
 }

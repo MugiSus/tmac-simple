@@ -32,9 +32,9 @@ export default function Home() {
           </p>
           <p>
             This page visualizes a precise time difference based by your
-            location, for example, if you are at 5° latitude, it advances{" "}
+            location, for example, if you are at 1° latitude, it advances{" "}
             <span className="text-cyan-600 font-semibold">the blue clock</span>{" "}
-            by 20 minutes.
+            by 4 minutes.
           </p>
           <p>
             Kyoto and Tokyo have 15 minutes of a time difference of approx.
