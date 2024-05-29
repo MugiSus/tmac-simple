@@ -1,27 +1,29 @@
-export default function DiffDisplay({ diff }: { diff: Date }) {
+export default function DiffDisplay({ diff }: { diff: number }) {
+  const date = new Date(Math.abs(diff));
+
   return (
     <div className="tabular-nums flex flex-col leading-none items-center">
       <div
         className="font-light text-[9rem] md:text-[12rem]"
         suppressHydrationWarning
       >
-        {["-", "±", "+"][Math.sign(diff.getTime()) + 1]}
-        {diff.getUTCHours().toString()}
+        {["−", "±", "+"][Math.sign(diff) + 1]}
+        {date.getUTCHours().toString()}
       </div>
       <div
         className="font-light text-[9rem] md:text-[12rem]"
         suppressHydrationWarning
       >
-        {diff.getUTCMinutes().toString().padStart(2, "0")}
+        {date.getUTCMinutes().toString().padStart(2, "0")}
       </div>
       <div
         className="font-light text-[9rem] md:text-[12rem]"
         suppressHydrationWarning
       >
-        {diff.getUTCSeconds().toString().padStart(2, "0")}
+        {date.getUTCSeconds().toString().padStart(2, "0")}
       </div>
       <div className="font-medium my-4 text-6xl" suppressHydrationWarning>
-        .{diff.getUTCMilliseconds().toString().padStart(3, "0")}
+        .{date.getUTCMilliseconds().toString().padStart(3, "0")}
       </div>
     </div>
   );
