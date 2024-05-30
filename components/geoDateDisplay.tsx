@@ -27,12 +27,9 @@ export default function GeoDateDisplay({
     navigator.geolocation.watchPosition(
       (position) => {
         const longitude = position.coords.longitude;
-        setDifference(
-          (longitude * 4 +
-            (getTimezoneOffsetWithoutDST() - new Date().getTimezoneOffset())) *
-            60 *
-            1000
-        );
+        const dst =
+          getTimezoneOffsetWithoutDST() - new Date().getTimezoneOffset();
+        setDifference((longitude * 4 + dst) * 60 * 1000);
       },
       (error) => {
         console.error(error);
