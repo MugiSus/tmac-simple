@@ -11,7 +11,7 @@ export default function GeoDateDisplay({
   defaultDate: number;
 }) {
   const [longitude, setLongitude] = useState(
-    (getTimezoneOffsetWithoutDST() / 60) * -15
+    (new Date().getTimezoneOffset() / 60) * -15
   );
 
   const [ntpOffset, setNtpOffset] = useState(0);
@@ -40,7 +40,10 @@ export default function GeoDateDisplay({
   }, []);
 
   const difference = longitude
-    ? (longitude * 4 + getTimezoneOffsetWithoutDST()) * 60 * 1000
+    ? (longitude * 4 +
+        (getTimezoneOffsetWithoutDST() - new Date().getTimezoneOffset())) *
+      60 *
+      1000
     : 0;
 
   console.log(defaultDate, difference);
