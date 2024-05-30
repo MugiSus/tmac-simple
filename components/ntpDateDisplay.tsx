@@ -6,7 +6,11 @@ import DateDisplay from "./dateDisplay";
 import getNTPOffset from "@/lib/getNtpOffset";
 import getTimezoneOffsetWithoutDST from "@/lib/getTimezoneOffsetWithoutDST";
 
-export default function NTPDateDisplay({ defaultDate }: { defaultDate: Date }) {
+export default function NTPDateDisplay({
+  defaultDate,
+}: {
+  defaultDate: number;
+}) {
   const [ntpOffset, setNtpOffset] = useState(0);
 
   useEffect(() => {

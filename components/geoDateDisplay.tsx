@@ -5,7 +5,11 @@ import DateDisplay from "./dateDisplay";
 import getNTPOffset from "@/lib/getNtpOffset";
 import getTimezoneOffsetWithoutDST from "@/lib/getTimezoneOffsetWithoutDST";
 
-export default function GeoDateDisplay({ defaultDate }: { defaultDate: Date }) {
+export default function GeoDateDisplay({
+  defaultDate,
+}: {
+  defaultDate: number;
+}) {
   const [longitude, setLongitude] = useState(
     (getTimezoneOffsetWithoutDST() / 60) * -15
   );

@@ -7,20 +7,20 @@ export default function DateDisplay({
   defaultDate,
   offset,
 }: {
-  defaultDate: Date;
+  defaultDate: number;
   offset?: number;
 }) {
-  const [currentDate, setCurrentDate] = useState(defaultDate);
+  const [currentTime, setCurrentTime] = useState(defaultDate);
 
   useRequestAnimationFrame(
     (progress, next) => {
-      setCurrentDate(new Date());
+      setCurrentTime(Date.now());
       next();
     },
     { startAt: 0, finishAt: -1 }
   );
 
-  const date = new Date(currentDate.getTime() + (offset ?? 0));
+  const date = new Date(currentTime + (offset ?? 0));
 
   const hours = date.getHours().toString().padStart(2, "0");
   const minutes = date.getMinutes().toString().padStart(2, "0");
