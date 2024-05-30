@@ -1,7 +1,8 @@
 export default function DiffDisplay({ diff }: { diff: number }) {
   const date = new Date(Math.abs(diff));
 
-  const hours = ["−", "±", "+"][Math.sign(diff) + 1] + date.getUTCHours();
+  const hours =
+    ["−", "±", "+"][Math.sign(Math.round(diff)) + 1] + date.getUTCHours();
   const minutes = date.getUTCMinutes().toString().padStart(2, "0");
   const seconds = date.getUTCSeconds().toString().padStart(2, "0");
   const milliseconds = date.getUTCMilliseconds().toString().padStart(3, "0");
