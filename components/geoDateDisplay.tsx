@@ -39,7 +39,7 @@ export default function GeoDateDisplay({ defaultDate }: { defaultDate: Date }) {
     ? (longitude * 4 + getTimezoneOffsetWithoutDST()) * 60 * 1000
     : 0;
 
-  console.log(difference);
+  console.log(defaultDate, difference);
 
   return <DateDisplay defaultDate={defaultDate} offset={difference} />;
 }
