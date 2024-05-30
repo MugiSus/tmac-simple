@@ -10,17 +10,17 @@ export default function DateDisplay({
   defaultDate: Date;
   offset?: number;
 }) {
-  const [time, setTime] = useState(defaultDate);
+  const [now, setNow] = useState(0);
 
   useRequestAnimationFrame(
     (progress, next) => {
-      setTime(new Date());
+      setNow(performance.now());
       next();
     },
     { startAt: 0, finishAt: -1 }
   );
 
-  const date = new Date(time.getTime() + (offset ?? 0));
+  const date = new Date(defaultDate.getTime() + now + (offset ?? 0));
 
   return (
     <div className="tabular-nums flex flex-col leading-none items-center">

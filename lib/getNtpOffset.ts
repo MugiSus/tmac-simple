@@ -5,5 +5,5 @@ export default async function getNTPOffset() {
   const ntp = new Date(data.datetime);
   const requestDuration = performance.now() - requestSent;
 
-  return ntp.getTime() - Date.now() - requestDuration / 2;
+  return ntp.getTime() - Date.now() - requestDuration / 2 - performance.now();
 }
