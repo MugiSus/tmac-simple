@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import DateDisplay from "./dateDisplay";
-import getNTPOffset from "@/lib/getNtpOffset";
 import DiffDisplay from "./diffDisplay";
 import getTimezoneOffsetWithoutDST from "@/lib/getTimezoneOffsetWithoutDST";
 

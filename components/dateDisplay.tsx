@@ -28,22 +28,22 @@ export default function DateDisplay({
         className="font-light text-[9rem] md:text-[12rem]"
         suppressHydrationWarning
       >
-        {date.getUTCHours().toString().padStart(2, "0")}
+        {date.getHours().toString().padStart(2, "0")}
       </div>
       <div
         className="font-light text-[9rem] md:text-[12rem]"
         suppressHydrationWarning
       >
-        {date.getUTCMinutes().toString().padStart(2, "0")}
+        {date.getMinutes().toString().padStart(2, "0")}
       </div>
       <div
         className="font-light text-[9rem] md:text-[12rem]"
         suppressHydrationWarning
       >
-        {date.getUTCSeconds().toString().padStart(2, "0")}
+        {date.getSeconds().toString().padStart(2, "0")}
       </div>
       <div className="font-medium my-4 text-6xl" suppressHydrationWarning>
-        .{date.getUTCMilliseconds().toString().padStart(3, "0")}
+        .{date.getMilliseconds().toString().padStart(3, "0")}
       </div>
     </div>
   );

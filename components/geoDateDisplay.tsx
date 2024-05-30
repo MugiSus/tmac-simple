@@ -35,9 +35,11 @@ export default function GeoDateDisplay({ defaultDate }: { defaultDate: Date }) {
     );
   }, []);
 
-  const timeDifference = (longitude / 15) * 60 * 60 * 1000 + ntpOffset;
+  const difference = longitude
+    ? (longitude * 4 + getTimezoneOffsetWithoutDST()) * 60 * 1000
+    : 0;
 
-  console.log(timeDifference);
+  console.log(difference);
 
-  return <DateDisplay defaultDate={defaultDate} offset={timeDifference} />;
+  return <DateDisplay defaultDate={defaultDate} offset={difference} />;
 }
