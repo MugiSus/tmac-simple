@@ -21,7 +21,6 @@ export default function DateDisplay({
   );
 
   const date = new Date(defaultDate.getTime() + now + (offset ?? 0));
-  console.log(date.getTimezoneOffset(), date.getHours());
 
   return (
     <div className="tabular-nums flex flex-col leading-none items-center">
