@@ -10,7 +10,7 @@ export default function GeoDateDisplay({
 }: {
   defaultDate: number;
 }) {
-  const [longitude, setLongitude] = useState(
+  const [difference, setDifference] = useState(
     (new Date().getTimezoneOffset() / 60) * -15
   );
 
@@ -26,7 +26,13 @@ export default function GeoDateDisplay({
 
     navigator.geolocation.watchPosition(
       (position) => {
-        setLongitude(position.coords.longitude);
+        const longitude = position.coords.longitude;
+        setDifference(
+          (longitude * 4 +
+            (getTimezoneOffsetWithoutDST() - new Date().getTimezoneOffset())) *
+            60 *
+            1000
+        );
       },
       (error) => {
         console.error(error);
@@ -39,14 +45,7 @@ export default function GeoDateDisplay({
     );
   }, []);
 
-  const difference = longitude
-    ? (longitude * 4 +
-        (getTimezoneOffsetWithoutDST() - new Date().getTimezoneOffset())) *
-      60 *
-      1000
-    : 0;
-
-  console.log(defaultDate, difference);
-
-  return <DateDisplay defaultDate={defaultDate} offset={difference} />;
+  return (
+    <DateDisplay defaultDate={defaultDate} offset={difference + ntpOffset} />
+  );
 }
