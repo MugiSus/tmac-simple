@@ -22,28 +22,33 @@ export default function DateDisplay({
 
   const date = new Date(currentDate.getTime() + (offset ?? 0));
 
+  const hours = date.getHours().toString().padStart(2, "0");
+  const minutes = date.getMinutes().toString().padStart(2, "0");
+  const seconds = date.getSeconds().toString().padStart(2, "0");
+  const milliseconds = date.getMilliseconds().toString().padStart(3, "0");
+
   return (
     <div className="tabular-nums flex flex-col leading-none items-center">
       <div
         className="font-light text-[9rem] md:text-[12rem]"
         suppressHydrationWarning
       >
-        {date.getHours().toString().padStart(2, "0")}
+        {hours}
       </div>
       <div
         className="font-light text-[9rem] md:text-[12rem]"
         suppressHydrationWarning
       >
-        {date.getMinutes().toString().padStart(2, "0")}
+        {minutes}
       </div>
       <div
         className="font-light text-[9rem] md:text-[12rem]"
         suppressHydrationWarning
       >
-        {date.getSeconds().toString().padStart(2, "0")}
+        {seconds}
       </div>
       <div className="font-medium my-4 text-6xl" suppressHydrationWarning>
-        .{date.getMilliseconds().toString().padStart(3, "0")}
+        .{milliseconds}
       </div>
     </div>
   );
