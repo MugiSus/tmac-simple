@@ -22,7 +22,7 @@ export default function GeoDiffDisplay() {
       },
       {
         maximumAge: 0,
-        timeout: 20000,
+        timeout: 60000,
         enableHighAccuracy: true,
       }
     );
