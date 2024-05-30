@@ -1,9 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import GeoDateDisplay from "@/components/geoDateDisplay";
 import GeoDiffDisplay from "@/components/geoDiffDisplay";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [clientDate, setClientDate] = useState(new Date());
+
+  useEffect(() => setClientDate(new Date()), []);
+
   return (
     <main className="flex flex-col bg-slate">
       <div className="flex min-h-svh items-center justify-center flex-wrap px-2 py-16 snap-center">
@@ -11,7 +18,7 @@ export default function Home() {
           <GeoDiffDisplay />
         </div>
         <div className="text-cyan-600">
-          <GeoDateDisplay defaultDate={new Date()} />
+          <GeoDateDisplay defaultDate={clientDate} />
         </div>
       </div>
       <div className="flex min-h-lvh items-center justify-center snap-center flex-col gap-16 font-light text-center px-8 sm:px-16 py-16">
