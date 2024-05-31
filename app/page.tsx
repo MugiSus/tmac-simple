@@ -5,7 +5,7 @@ import GeoDiffDisplay from "@/components/geoDiffDisplay";
 
 export default function Home() {
   return (
-    <main className="flex flex-col bg-slate">
+    <main className="flex flex-col">
       <div className="flex min-h-svh items-center justify-center flex-wrap px-2 py-16 snap-center">
         <div className="text-pink-600">
           <GeoDiffDisplay />
